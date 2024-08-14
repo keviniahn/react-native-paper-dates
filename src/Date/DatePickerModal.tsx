@@ -15,6 +15,7 @@ import DatePickerModalContent, {
 import React, { memo } from 'react'
 import { sharedStyles } from '../shared/styles'
 import { supportedOrientations } from '../shared/utils'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 interface DatePickerModalProps {
   visible: boolean
@@ -63,6 +64,7 @@ export function DatePickerModal(
 
   const theme = useTheme()
   const dimensions = useWindowDimensions()
+  const { top, bottom } = useSafeAreaInsets()
 
   return (
     <View style={StyleSheet.absoluteFill} pointerEvents="box-none">
@@ -85,7 +87,7 @@ export function DatePickerModal(
           />
         </TouchableWithoutFeedback>
         <View
-          style={[StyleSheet.absoluteFill, styles.modalRoot]}
+          style={[StyleSheet.absoluteFill, styles.modalRoot, { top, bottom }]}
           pointerEvents="box-none"
         >
           <View

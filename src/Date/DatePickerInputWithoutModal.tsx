@@ -142,7 +142,7 @@ function getLabel({
 
 const styles = StyleSheet.create({
   root: {
-    flex: 1,
+    //flex: 1, //limitaba el flex
     flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'flex-start',
